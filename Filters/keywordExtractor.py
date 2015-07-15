@@ -9,7 +9,7 @@ def extract(query):
         
     for word in query:
         word = word.lower()
-        word = re.sub(r"[^\w\s]", "", word)  # Remove all the punctuations
+        word = re.sub(r"([^\w\s])|(/[^\x00-\x7F]+\ *(?:[^\x00-\x7F]| )*/g)", "", word)  # Remove all the punctuations and non-ASCII characters |([^\u0000-\u007F]+)
                     
         if word not in StopWords:
             StrippedQuery.append(word)

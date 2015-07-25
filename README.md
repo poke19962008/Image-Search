@@ -15,7 +15,8 @@ Image Search prototype for SRM Search Engine
 - Converts JSON from filter.py to MySQL
  
 ## Upcomming commits
-- [ ] Stem Indexing of 'ID' from 'Main_Index.sql'.
+- [ ] Porter Stemmer Indexing of 'ID' from 'Main_Index.sql'.
+ -  http://tartarus.org/martin/PorterStemmer/def.txt 
 - [ ] Intersection of docIDs.
 - [ ] Set ranking parameters.
 

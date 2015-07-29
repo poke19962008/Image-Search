@@ -5,7 +5,7 @@ import json, mysql.connector
 db = mysql.connector.connect(user='root', host='localhost', database = 'SRM_ISE', port=8888)
 cursor = db.cursor()
 
-command = "CREATE TABLE `Main Index` (`ID` VARCHAR(200) PRIMARY KEY, `Detail` VARCHAR(200))"
+command = "CREATE TABLE `Main Index` (`ID` VARCHAR(200) PRIMARY KEY, `Detail` TEXT)"
 cursor.execute(command)
 
 data = {}
@@ -14,11 +14,9 @@ with open('db.json', 'r') as f:
         tuple = json.loads(line)
 
         for word in tuple['name']:
-            if word in data:
-                data[word].append({'ID': tuple['docID'], 'Pos.': tuple['name'].index(word)})
-            else:
+            if word not in data:
                 data[word] = []
-                data[word].append({'ID': tuple['docID'], 'Pos.': tuple['name'].index(word)})
+            data[word].append(str({'ID': tuple['docID'], 'Pos.': tuple['name'].index(word)}))
 
             print(tuple['docID'], "Done!")
 

@@ -13,12 +13,17 @@ Image Search prototype for SRM Search Engine
 
 ## docTable.py
 - Converts JSON from filter.py to MySQL
+
+## stemIndexer.py
+- Converts the `Main Index` to Stemmed Index.
+- Algorithm = Porter Stemmer
+- 11,338 `ID` affected.
  
 ## Upcoming commits
-- [ ] Porter Stemmer Indexing of 'ID' from 'Main_Index.sql'.
+- ~~Porter Stemmer Indexing of 'ID' from 'Main_Index.sql'.~~
  -  http://tartarus.org/martin/PorterStemmer/def.txt 
-- [ ] Intersection of docIDs.
-- [ ] Set ranking parameters.
+- Intersection of docIDs.
+- Set ranking parameters.
 
 ## Resource Websites Used
 - www.archive.org
